@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Registration Form</title>
+  <link rel="icon" href="favicon.ico">
+  <style>
+    body {font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9;}
+    h1 {text-align: center;}
+    form {max-width: 700px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+    fieldset {margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; padding: 15px;}
+    legend {font-weight: bold;}
+    label {display: block; margin-top: 10px;}
+    input, select, textarea {width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;}
+    input[type="radio"], input[type="checkbox"] {width: auto;}
+    button {background-color: #007bff; color: white; border: none; padding: 10px 15px; margin: 10px 5px; border-radius: 5px; cursor: pointer;}
+    button:hover {background-color: #0056b3;}
+  </style>
+</head>
+<body>
+  <h1>Course Registration Form</h1>
+  <form action="/submit-registration" method="POST" enctype="multipart/form-data">
+
+    <!-- Personal Information -->
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="photo">Profile Picture:</label>
+      <input type="file" id="photo" name="photo" accept="image/*">
+    </fieldset>
+
+    <!-- Academic Background -->
+    <fieldset>
+      <legend>Academic Background</legend>
+      <label for="education">Current Education Level:</label>
+      <select id="education" name="education">
+        <option>High School</option>
+        <option>Bachelor's</option>
+        <option>Master's</option>
+        <option>PhD</option>
+      </select>
+
+      <label for="field">Field of Study:</label>
+      <input type="text" id="field" name="field" placeholder="e.g. Computer Science">
+
+      <label for="experience">Years of Programming Experience:</label>
+      <input type="number" id="experience" name="experience" min="0" max="20">
+    </fieldset>
+
+    <!-- Course Preferences -->
+    <fieldset>
+      <legend>Course Preferences</legend>
+      <p>Preferred Learning Mode:</p>
+      <label><input type="radio" name="mode" value="Online"> Online</label>
+      <label><input type="radio" name="mode" value="Offline"> Offline</label>
+      <label><input type="radio" name="mode" value="Hybrid"> Hybrid</label>
+
+      <p>Course Categories:</p>
+      <label><input type="checkbox" name="category" value="Web Development"> Web Development</label>
+      <label><input type="checkbox" name="category" value="Mobile App Development"> Mobile App Development</label>
+      <label><input type="checkbox" name="category" value="Data Science"> Data Science</label>
+      <label><input type="checkbox" name="category" value="AI/ML"> AI/ML</label>
+      <label><input type="checkbox" name="category" value="DevOps"> DevOps</label>
+
+      <p>Preferred Schedule:</p>
+      <label><input type="radio" name="schedule" value="Weekdays"> Weekdays</label>
+      <label><input type="radio" name="schedule" value="Weekends"> Weekends</label>
+      <label><input type="radio" name="schedule" value="Flexible"> Flexible</label>
+    </fieldset>
+
+    <!-- Additional Information -->
+    <fieldset>
+      <legend>Additional Information</legend>
+      <label for="level">Programming Experience Level:</label>
+      <input type="range" id="level" name="level" min="1" max="10">
+
+      <label for="comments">Special Requirements or Comments:</label>
+      <textarea id="comments" name="comments" rows="4" placeholder="Enter any special requirements"></textarea>
+
+      <p>Preferred Contact Method:</p>
+      <label><input type="radio" name="contact" value="Email"> Email</label>
+      <label><input type="radio" name="contact" value="Phone"> Phone</label>
+      <label><input type="radio" name="contact" value="SMS"> SMS</label>
+    </fieldset>
+
+    <!-- Terms and Conditions -->
+    <fieldset>
+      <legend>Terms and Conditions</legend>
+      <label><input type="checkbox" required> I agree to the terms and conditions.</label>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+</body>
+</html>
